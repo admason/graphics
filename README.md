@@ -17,5 +17,7 @@
 #### For example, setting Radius=50 and Nuber of Petals=3, produces:
 [![r50p3.jpg](https://i.postimg.cc/SxxWG0Cm/r50p3.jpg)](https://postimg.cc/BXRLqVmz)
 
-
-####
+#### To draw afresh, restart the Kernal and enter variables.
+#### However, should you wish to add petals, rerun the code without interupting the kernal, and enter new variables.
+#### Such as Radius=100, Number of Petals = 3.
+[![r100p3.jpg](https://i.postimg.cc/xjL7wm7c/r100p3.jpg)](https://postimg.cc/9zFJTDch)
