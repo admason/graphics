@@ -21,3 +21,11 @@
 #### However, should you wish to add petals, rerun the code without interupting the kernal, and enter new variables.
 #### Such as Radius=100, Number of Petals = 3.
 [![r100p3.jpg](https://i.postimg.cc/xjL7wm7c/r100p3.jpg)](https://postimg.cc/9zFJTDch)
+
+### How about number of petals?
+#### Fixing Radius at 100, first 3 petals:
+[![r100p3.jpg](https://i.postimg.cc/d1N1vXDj/r100p3.jpg)](https://postimg.cc/qhn0x1sN)
+#### As before, no problems.
+#### Next, keeping Radius at 100, this time 9 petals.
+[![r100p3p5.jpg](https://i.postimg.cc/DfWs0dFw/r100p3p5.jpg)](https://postimg.cc/pyHy1jpw)
+#### Notice how second flower with 9 petals has it's radius reduced?
