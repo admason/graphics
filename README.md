@@ -32,12 +32,68 @@
 #### Conviently it fits within the 3 petals, this is due to the division of 360 degree into 3 in the first drawing and then 9 in the second.
 #### Thus the 360/9 fits within the 360/3 rotational symmetry.
 #### But whay the reductio  in radius?
-#### This is due to the code using arclength parametrisation:
+#### This is due to the code using arclength parametrisation, where step length is subject to division by 'n', the number of petals.
 ```
 def arc(t, r, angle):
-    **arc_length = 2*math.pi*r*angle/360**
-    **n = int(arc_length/3) + 1**
+    arc_length = 2*math.pi*r*angle/360
+    n = int(arc_length/3) + 1
     step_length = arc_length/n
     step_angle = float(angle)/n
     polyline(t, n, step_length, step_angle)
+```
+#### This is due for investigatio and will be improved in future versions. Perhaps a proportion may be applied to match the drawn radius to keep it consistent for the number of petals?
+
+### **Tech** 
+##### Coded with Python in Jupyter notebook turtle, math. 
+##### Import Library List: 
+##### Libaries initiated with code as:
+```
+import turtle
+import math
+```
+
+## **Code**
+```
+# Flowers with odd numbers of petal
+
+import turtle
+import math
+
+r=int(input("Radius of flower? "))
+n=int(input("Number of petals, (odd numbers only)? "))
+
+angle=360/n
+
+def polyline(t, n, length, angle):
+    for i in range(n):
+        t.fd(length)
+        t.lt(angle)
+bloom=turtle.Turtle()
+
+def arc(t, r, angle):
+    arc_length = 2*math.pi*r*angle/360
+    n = int(arc_length/3) + 1
+    step_length = arc_length/n
+    step_angle = float(angle)/n
+    polyline(t, n, step_length, step_angle)
+
+bloom=turtle.Turtle()
+
+def polygon(t, n, length):
+    angle = 360/n
+    polyline(t, n, length, angle)
+
+def petal(t,r,angle):
+    angle=360/n
+    arc(t,r,angle)
+    t.lt(180-angle)
+    arc(t,r,angle)
+
+
+def flower(t,r,n,angle):
+    for i in range(n):
+        petal(t,r,angle)
+        t.rt(180-angle)
+    
+flower(bloom,r,n,angle)
 ```
