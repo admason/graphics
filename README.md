@@ -29,3 +29,15 @@
 #### Next, keeping Radius at 100, this time 9 petals.
 [![r100p3p5.jpg](https://i.postimg.cc/DfWs0dFw/r100p3p5.jpg)](https://postimg.cc/pyHy1jpw)
 #### Notice how second flower with 9 petals has it's radius reduced?
+#### Conviently it fits within the 3 petals, this is due to the division of 360 degree into 3 in the first drawing and then 9 in the second.
+#### Thus the 360/9 fits within the 360/3 rotational symmetry.
+#### But whay the reductio  in radius?
+#### This is due to the code using arclength parametrisation:
+```
+def arc(t, r, angle):
+    **arc_length = 2*math.pi*r*angle/360**
+    **n = int(arc_length/3) + 1**
+    step_length = arc_length/n
+    step_angle = float(angle)/n
+    polyline(t, n, step_length, step_angle)
+```
