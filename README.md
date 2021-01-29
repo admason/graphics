@@ -1,5 +1,5 @@
 # **Graphics Projects**
-#### A collection of comnputer graphics projects
+#### A collection of computer graphics projects
 ##### I have always been very interested in computer graphics and depictions of visual mathematics.
 ##### In fact the mystries of geometry triggered my interest in mathematics and remains my favourite field of maths.
 ##### The combination of maths and art is a passion I wish to persue, given enough time I hope to fill this repository with examples of my work.
@@ -129,3 +129,68 @@ a = np.array([x,y])
 v = np.transpose(a)
 print('a = {}, v = {}, vector v =[{}, {}]'.format(a,v, v[0],v[1]))
 ```
+# Execute code 
+```
+# To plot the vector
+import matplotlib.pyplot as plt
+ax = plt.axes()
+plt.axis([-1-v[0],1+v[0],-1-v[1],1+v[1]])
+x1 = 0
+y1 = 0
+x2 = v[0]
+y2 = v[1]
+
+ax.arrow(0,0,v[0],v[1], head_width=0.09, head_length=0.09, fc = 'y', ec ='k')
+
+plt.text(v[0]*1.3,v[1]*1.3,'$X$', fontsize=15)
+
+plt.show()
+grad = (y2 - y1)/(x2 - x1)
+print('gradient: {}'.format(grad))
+```
+# Execute
+
+```
+# Rotation Operator
+thetadeg = np.round(m.degrees(m.atan(y/x)),12)
+
+thetarad = np.round(m.atan(y/x),12)
+
+print('Angle of rotatation is {} degrees or {} radians'.format(thetadeg,thetarad))
+```
+# Execute
+
+```
+R=np.array([[np.cos(thetarad), -np.sin(thetarad)],[np.sin(thetarad), np.cos(thetarad)]])
+print(R)
+# Rotated vector B=A*X
+B=np.dot(R,v)
+print(B)
+```
+# Execute
+
+```
+# Plot both vectors
+
+import matplotlib.pyplot as plt
+
+ax = plt.axes()
+plt.axis([-2-max(v[0],B[0]),2+max(v[0],B[0]),-2-max(v[1],B[1]),2+max(v[1],B[1])])
+
+
+ax.arrow(0,0,v[0],v[1], head_width=0.09, head_length=0.09, fc = 'y', ec ='k')
+ax.arrow(0,0,B[0],B[1], head_width=0.1, head_length=0.1, fc = 'k', ec = 'k')
+
+plt.text(v[0]*1.3,v[1]*1.3,'$v$', fontsize=15)
+plt.text(B[0]+0.2,B[1],'$B=Rv$', fontsize=15)
+
+plt.show()
+```
+# Execute
+
+## **Improvements:**
+
+### Condense the code into on cell.
+### Incorporate into a GUI for ease of use.
+### Options for calculating the Orthoganal vector
+### Expand the code into 3Dimension, or further in 4+ dimensional Tensor
