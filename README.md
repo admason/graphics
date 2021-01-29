@@ -3,7 +3,7 @@
 ##### I have always been very interested in computer graphics and depictions of visual mathematics.
 ##### In fact the mystries of geometry triggered my interest in mathematics and remains my favourite field of maths.
 ##### The combination of maths and art is a passion I wish to persue, given enough time I hope to fill this repository with examples of my work.
-## **1. Flowers.**
+## **1. Flowers with turtle.**
 ### Built on Python 3, jupyter notebook
 #### flowers_1.ipynb
 #### flowers_1.py
@@ -31,7 +31,7 @@
 #### Notice how second flower with 9 petals has it's radius reduced?
 #### Conviently it fits within the 3 petals, this is due to the division of 360 degree into 3 in the first drawing and then 9 in the second.
 #### Thus the 360/9 fits within the 360/3 rotational symmetry.
-#### But whay the reductio  in radius?
+#### But why the reduction  in radius?
 #### This is due to the code using arclength parametrisation, where step length is subject to division by 'n', the number of petals.
 ```
 def arc(t, r, angle):
@@ -96,4 +96,36 @@ def flower(t,r,n,angle):
         t.rt(180-angle)
     
 flower(bloom,r,n,angle)
+```
+# **2. Vector Rotation**
+## 
+### Built on Python 3, jupyter notebook
+#### Vector_rotation.ipynb
+#### This code take the input as the x,y elements of a vector in R^2 cartesian space and apply a rotation based upon the vector's angle with the line y=0. 
+
+
+### **Build Status:** Working model, under development
+
+### **Tech** 
+##### Coded with Python in Jupyter notebook matplotlib.pyplot, numpy, math. 
+##### Import Library List: 
+##### Libaries initiated with code as:
+```
+import numpy as np
+import math as m
+import matplotlib.pyplot as plt
+```
+
+## **Code**
+
+# Define the vector
+
+```
+import numpy as np
+import math as m
+x=float(input('Enter x coord: ' ))
+y=float(input('Enter y coord: ' ))
+a = np.array([x,y])
+v = np.transpose(a)
+print('a = {}, v = {}, vector v =[{}, {}]'.format(a,v, v[0],v[1]))
 ```
