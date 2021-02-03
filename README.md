@@ -97,3 +97,56 @@ def flower(t,r,n,angle):
     
 flower(bloom,r,n,angle)
 ```
+
+
+## **2. Vector Rotation.**
+### Built on Python 3, jupyter notebook
+#### Vector Rotation (user defined).ipynb
+
+### **Build Status:** Working model, under development
+[![zvectrot1.jpg](https://i.postimg.cc/rms3L6yK/zvectrot1.jpg)](https://postimg.cc/47CBzS9g)
+
+```
+import numpy as np
+import math as m
+import matplotlib.pyplot as plt
+
+# Define the vector
+x=float(input('Enter x coord: ' ))
+y=float(input('Enter y coord: ' ))
+angle=float(input('Enter angle of rotation in degrees: '))
+anglerad = angle*(m.pi/180)
+a = np.array([x,y])
+v = np.transpose(a)
+print('a = {}, v = {}, vector v =[{}, {}], angle of rotation is {} degrees'.format(a,v, v[0],v[1],angle))
+
+# Rotation Matrix
+R=np.array([[np.cos(anglerad), -np.sin(anglerad)],[np.sin(anglerad), np.cos(anglerad)]])
+
+# Rotate vector v
+v1=np.dot(R,v)
+```
+
+[![zex.jpg](https://i.postimg.cc/sxFkP6yx/zex.jpg)](https://postimg.cc/JDqYMQsC)
+
+```
+ax = plt.axes()
+plt.axis([-2-max(v[0],v1[0]),2+max(v[0],v1[0]),-2-max(v[1],v1[1]),2+max(v[1],v1[1])])
+ax.arrow(0,0,v[0],v[1], head_width=0.09, head_length=0.09, fc = 'y', ec ='k')
+ax.arrow(0,0,v1[0],v1[1], head_width=0.1, head_length=0.1, fc = 'k', ec = 'k')
+
+plt.text(v[0]*1.3,v[1]*1.3,'$v$', fontsize=15)
+plt.text(v1[0]+0.2,v1[1],'$v_{1}=Rv$', fontsize=15)
+
+plt.show()
+```
+
+### For example, entering the original vector as v= [1,0] and angle of rotation as 90 degrees, produces the following plot:
+
+[![xplot.jpg](https://i.postimg.cc/YSZZknvR/xplot.jpg)](https://postimg.cc/yJhvyTX3)
+
+### An added feature is that the plot will expand to accommodate vector of greater magnitudes.
+### For example v = [15,0] under 90 degrees, will produce:
+[![xplotresc.jpg](https://i.postimg.cc/ncND4q95/xplotresc.jpg)](https://postimg.cc/ppYrxhZY)
+Note how the axis have adapted to the change in magnitude.
+
