@@ -148,5 +148,5 @@ plt.show()
 ### An added feature is that the plot will expand to accommodate vector of greater magnitudes.
 ### For example v = [10,0] under 90 degrees, will produce:
 [![xplotresc.jpg](https://i.postimg.cc/ncND4q95/xplotresc.jpg)](https://postimg.cc/ppYrxhZY)
-Note how the axis have adapted to the change in magnitude.
+### Note how the axis have adapted to the change in magnitude.
 
